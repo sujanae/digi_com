@@ -6,7 +6,7 @@ class ProductDetailScreen extends StatelessWidget {
   final Product product;
   final CartService _cartService = CartService();
 
-  ProductDetailScreen({Key? key, required this.product}) : super(key: key);
+  ProductDetailScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +15,10 @@ class ProductDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           product.name,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.grey[900],
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -31,28 +31,28 @@ class ProductDetailScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     product.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     '\₹${product.price.toStringAsFixed(2)}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       color: Colors.tealAccent,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     product.description,
                     style: TextStyle(
@@ -61,7 +61,7 @@ class ProductDetailScreen extends StatelessWidget {
                       height: 1.5,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.black,
@@ -69,7 +69,7 @@ class ProductDetailScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         vertical: 14,
                         horizontal: 20,
                       ),
@@ -77,7 +77,7 @@ class ProductDetailScreen extends StatelessWidget {
                     onPressed: () {
                       _cartService.addToCart(product);
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text(
                             'Added to Cart',
                             style: TextStyle(color: Colors.white),
@@ -86,7 +86,7 @@ class ProductDetailScreen extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Add to Cart',
                       style: TextStyle(fontSize: 16),
                     ),
