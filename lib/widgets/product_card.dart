@@ -13,7 +13,7 @@ class ProductCard extends StatelessWidget {
     required this.product,
     this.titleColor = Colors.black,
     this.priceColor = Colors.blue,
-    this.cardColor = Colors.white,
+    this.cardColor = const Color.fromARGB(255, 43, 42, 42),
   }) : super(key: key);
 
   @override
