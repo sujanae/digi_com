@@ -11,8 +11,8 @@ class ProductCard extends StatelessWidget {
   const ProductCard({
     Key? key,
     required this.product,
-    this.titleColor = Colors.black87,
-    this.priceColor = Colors.green,
+    this.titleColor = Colors.black,
+    this.priceColor = Colors.blue,
     this.cardColor = Colors.white,
   }) : super(key: key);
 
@@ -30,64 +30,38 @@ class ProductCard extends StatelessWidget {
       child: Card(
         color: cardColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
         ),
-        elevation: 4,
-        margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        elevation: 5,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-              child: Image.network(
-                product.imageUrl,
-                height: 180,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => Container(
-                  height: 180,
-                  width: double.infinity,
-                  color: Colors.grey.shade200,
-                  child: Center(
-                    child: Icon(
-                      Icons.broken_image,
-                      color: Colors.grey,
-                      size: 50,
-                    ),
-                  ),
-                ),
-              ),
+            Image.network(
+              product.imageUrl,
+              height: 150,
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     product.name,
                     style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
                       color: titleColor,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 5),
                   Text(
-                    '₹${product.price.toStringAsFixed(2)}',
+                    '\₹${product.price.toStringAsFixed(2)}',
                     style: TextStyle(
                       color: priceColor,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                    ),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    product.description,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       fontSize: 14,
-                      color: Colors.grey.shade600,
                     ),
                   ),
                 ],
