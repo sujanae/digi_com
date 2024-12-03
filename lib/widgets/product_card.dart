@@ -33,41 +33,50 @@ class ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         elevation: 5,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.network(
-              product.imageUrl,
-              height: 150,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.name,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: titleColor,
-                    ),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    '\₹${product.price.toStringAsFixed(2)}',
-                    style: TextStyle(
-                      color: priceColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.4, // 40% of screen width
+          margin: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+                child: Image.asset(
+                  product.imageUrl,
+                  height: 120,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      product.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                        color: titleColor,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      '\₹${product.price.toStringAsFixed(2)}',
+                      style: TextStyle(
+                        color: priceColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -25,7 +25,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             'Purchase Successful',
             style: TextStyle(color: Colors.green),
           ),
-          content: Text('Your digital products will be emailed to $_email'),
+          content: Text('Your digital products will be emailed to $_email',
+              style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.grey[900],
           actions: [
             TextButton(
