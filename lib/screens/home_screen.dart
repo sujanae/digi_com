@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import '../services/product_service.dart';
 import '../models/product.dart';
 import '../widgets/product_card.dart';
-import 'cart_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -32,13 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
-        title: Text(
+        title: const Text(
           'Digital Products',
           style: TextStyle(color: Colors.white),
         ),
         actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.shopping_cart,
               color: Colors.tealAccent,
             ),
@@ -49,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: _products.isEmpty
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(
                 color: Colors.tealAccent,
               ),
