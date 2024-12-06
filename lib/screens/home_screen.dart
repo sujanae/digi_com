@@ -43,10 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.tealAccent,
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => CartScreen()),
-              );
+              Navigator.pushNamed(context, '/cart');
             },
           ),
         ],

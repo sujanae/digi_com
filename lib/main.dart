@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:digi_com/screens/cart_screen.dart';
 import 'package:digi_com/screens/home_screen.dart';
 import 'package:digi_com/screens/login_page.dart';
 import 'package:digi_com/screens/register_page.dart';
@@ -17,7 +18,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: LoginPage(
+        onTap: () {},
+      ),
+      routes: {
+        '/cart': (context) => CartScreen(),
+      },
     );
   }
 }
