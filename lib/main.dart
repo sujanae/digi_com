@@ -1,9 +1,10 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:digi_com/counterapp/screen/counter_screen.dart';
+import 'package:digi_com/naruto-api/episode_screen.dart';
 import 'package:digi_com/screens/cart_screen.dart';
-import 'package:digi_com/screens/home_screen.dart';
 import 'package:digi_com/screens/login_page.dart';
-import 'package:digi_com/screens/register_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(DevicePreview(builder: (context) => const MyApp()));
@@ -16,14 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(
-        onTap: () {},
-      ),
-      routes: {
-        '/cart': (context) => CartScreen(),
-      },
-    );
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: EpisodeScreen());
   }
 }

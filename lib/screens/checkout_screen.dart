@@ -11,6 +11,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   final _formKey = GlobalKey<FormState>();
 
   String _email = '';
+  // ignore: unused_field
   String _name = '';
 
   void _processPayment() {
@@ -21,12 +22,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text(
+          title: const Text(
             'Purchase Successful',
-            style: TextStyle(color: Colors.green),
+            style: const TextStyle(color: Colors.green),
           ),
           content: Text('Your digital products will be emailed to $_email',
-              style: TextStyle(color: Colors.white)),
+              style: const TextStyle(color: Colors.white)),
           backgroundColor: Colors.grey[900],
           actions: [
             TextButton(
@@ -34,7 +35,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 _cartService.clearCart();
                 Navigator.of(context).popUntil((route) => route.isFirst);
               },
-              child: Text('OK', style: TextStyle(color: Colors.white)),
+              child: const Text('OK', style: TextStyle(color: Colors.white)),
             ),
           ],
         ),
@@ -46,7 +47,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout', style: TextStyle(color: Colors.white)),
+        title: const Text('Checkout', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
@@ -57,7 +58,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Order Summary',
                   style: TextStyle(
                     fontSize: 22,
